@@ -1,17 +1,20 @@
+import "./scss/style.scss"
 let postUrl = "https://jsonplaceholder.typicode.com/posts/";   
 const containerCards = document.getElementById("cards-holder");
 const Remover = document.getElementById("remover");
 const closeX = document.getElementsByClassName("close");
 const hamburger_menu = document.getElementsByClassName("hamburger-menu");
 const hamburger_button = document.getElementsByClassName("hamburgerbutton");
+console.log(hamburger_menu);
+console.log(hamburger_button);
 const post = document.querySelectorAll('[data-sku]');
 let init = {
          method: 'GET'
      }
 
      //funzioni
-  hamburger_button[0].addEventListener("click", () => {
-  hamburger_menu[0].classList.add("active");
+hamburger_button[0].addEventListener("click", () => {
+hamburger_menu[0].classList.add("active");
 })
 closeX[0].addEventListener("click",  () => {
   hamburger_menu[0].classList.remove("active");
@@ -50,9 +53,10 @@ Remover.addEventListener("click", (e) =>  {
 
         createCardHTML() {
     
-        return ` <div class="card" id=${this.id}>
+        return ` <div id=${this.id}>
               <div class="card-content">
                 <div class="content">
+                <div class="post"> <h3>Post: ${this.id}</h3> </div>
                   <div class="title"> <h1>${this.title}</h1> </div>
                   <div class="body"> <h2>${this.body} </h2> </div>
                 </div>
@@ -85,6 +89,8 @@ function getPost() {
           var myCard = new Card(id,title,body);
 
           var card = document.createElement("div");
+          card.classList.add("card");
+          card.id = id;
           card.innerHTML= myCard.createCardHTML();
           var button = document.createElement("button");
           button.classList.add("delete");

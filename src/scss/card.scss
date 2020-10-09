@@ -1,0 +1,38 @@
+#cards-holder{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card{
+        width: 30%;
+        height: auto;
+        margin: 5px;
+        border: 2px solid red;
+        padding: 15px;
+        text-align: center;
+        background-color: lightgreen;
+        overflow: hidden;
+
+        &:hover{
+            background-color: lightgrey;
+        }
+        h1 {
+            color:red
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    #cards-holder{
+        flex-direction: column;
+        
+        .card {
+            width: 70%;
+            margin-left: 15%;
+        }
+    }
+    
+}

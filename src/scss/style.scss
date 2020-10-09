@@ -1,0 +1,15 @@
+@import "common";
+@import "variables";
+@import "header";
+@import "toggle";
+@import "card";
+
+
+#remover{
+    display: inline-block;
+    margin-left: 40%;
+    text-align: center;
+    color: red;
+    font-size: 1.3em;
+    text-decoration: none;
+}
