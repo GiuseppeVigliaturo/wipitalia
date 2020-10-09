@@ -71,11 +71,12 @@ function getPost() {
   post.forEach((elem) => {
     elem.addEventListener("click", (e) => {
       let attribute = e.target.attributes[1].value;
+      //let cliccato = getElementById
 
       
 
       if (e.target.classList.contains("clicked")) {
-        alert("già cliccato");
+        alert("HAI GIA' CLICCATO ELIMINA L'ELEMENTO PRIMA DI CLICCARE NUOVAMENTE");
       } else {
         e.target.classList.add("clicked");
 
@@ -96,7 +97,17 @@ function getPost() {
           button.classList.add("delete");
           button.textContent = "REMOVE";
           card.appendChild(button);
-
+          
+          /**
+           * al click sul bottone remove elimino la card
+           * e tolgo la classe clicked dai post cosi da poterci
+           * ricliccare nuovamente una volta cancellato,
+           * N.B. il messaggio già cliccato avviene solo se si clicca sullo 
+           * stesso link la lista nel dropdown e a schermo intero sono staccate
+           * quindi la classe clicked viene si eliminata da entrambi ma assegnata solo
+           * a link specifico e non al suo corrispondente nel dropdown, questo non dovrebbe
+           * dare problemi nell'utilizzo se si utilizza solo da mobile o solo da pc
+           */
           button.addEventListener("click", (e) => {
 
                     let cardDeleted = document.getElementById(id);
